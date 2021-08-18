@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
       <Navbar>
-        <Container maxW="container.xl" w="full" centerContent>
-          <SimpleGrid columns={4} minChildWidth="sm" spacing="20px">
+        <Container maxW="container.xl" centerContent>
+          <SimpleGrid minChildWidth="sm" spacing="20px">
             <EstateCard />
             <EstateCard />
             <EstateCard />

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
       "@/firebase/*": ["firebase/*"],
       "@/mongodb/*": ["mongodb/*"],

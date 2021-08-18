@@ -1,4 +1,5 @@
 import {
+    Container,
     Box,
     Flex,
     HStack,
@@ -36,7 +37,7 @@ const NavLink = ({ children, linkHoverColor }) => (
 export default function Navbar({ children }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const linkColor = useColorModeValue('gray.600', 'gray.200');
-    const linkHoverColor = useColorModeValue('gray.800', 'white');
+    const linkHoverColor = useColorModeValue('teal.700', 'teal.400');
 
     return (
         <>

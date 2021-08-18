@@ -13,12 +13,16 @@
     "@chakra-ui/react": "^1.6.6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "compressorjs": "^1.0.7",
     "firebase": "^8.9.1",
     "framer-motion": "^4",
+    "moment": "^2.29.1",
     "mongodb": "^4.1.0",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.12.2",
+    "react-rating-stars-component": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",
