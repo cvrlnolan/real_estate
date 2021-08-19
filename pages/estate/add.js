@@ -21,7 +21,8 @@ import {
     Checkbox,
     Button,
     Textarea,
-    Image
+    Image,
+    useToast
 } from "@chakra-ui/react"
 import {
     ArrowForwardIcon,
@@ -38,11 +39,14 @@ import Navbar from "@/components/layout/navbar"
 import AlertPop from "@/components/formAlert"
 import { countryOptions } from "assets/countries"
 import { categoryOptions } from "assets/categories"
+import UploadImage from "@/firebase/estate/uploadImage"
 
 
 export default function AddEstate() {
 
     const imageInputRef = createRef()
+
+    const toast = useToast()
 
     const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: 'all' })
 
@@ -82,7 +86,22 @@ export default function AddEstate() {
     }
 
     const onSubmit = async (data) => {
-        console.log(data)
+        if (!image) {
+            toast({
+                title: "No image selected.",
+                description: "Please choose a display image for the estate.",
+                status: "error",
+                duration: 5000,
+                isClosable: true,
+            })
+            return
+        }
+        const estateData = {
+            ...data,
+            rating: 0,
+        }
+        await UploadImage(image, estateData, toast)
+        // console.log(estateData)
     }
 
     return (
@@ -292,6 +311,7 @@ export default function AddEstate() {
                                     <Stack spacing={4} direction={["column", "row"]}>
                                         <Checkbox name="cooling" {...register("cooling")}>Cooling</Checkbox>
                                         <Checkbox name="heating" {...register("heating")}>Heating</Checkbox>
+                                        <Checkbox name="internet" {...register("internet")}>Internet</Checkbox>
                                         <Checkbox name="furniture" {...register("furniture")}>Furniture</Checkbox>
                                         <Checkbox name="parking" {...register("parking")}>Parking</Checkbox>
                                     </Stack>

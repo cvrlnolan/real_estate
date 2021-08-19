@@ -1,4 +1,8 @@
 import firebase from "firebase/app"
+import "firebase/storage"
+import "firebase/analytics"
+import "firebase/performance"
+
 
 const clientCredentials = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,

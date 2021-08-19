@@ -15,17 +15,28 @@ import {
     ModalBody,
     ModalCloseButton,
     useDisclosure,
+    Icon,
     chakra
 } from "@chakra-ui/react"
+import { Rating } from "react-simple-star-rating"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { StarIcon } from "@chakra-ui/icons"
+import { StarIcon, CheckIcon, SmallCloseIcon } from "@chakra-ui/icons"
 import Navbar from "@/components/layout/navbar"
 import houseImage from "public/house.jpg"
 
 export default function EstatePage() {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const [rating, setRating] = useState(0)
+
+    const handleRating = (rate) => {
+        setRating(rate)
+        // Some logic
+    }
+
 
     return (
         <>
@@ -72,13 +83,14 @@ export default function EstatePage() {
                                 <Text color="gray.500">Canada</Text>
                             </Stack>
                             <Stack direction="column" spacing={2}>
-                                <Text color="gray.500">Furnitured</Text>
-                                <Text color="gray.500">Heating</Text>
-                                <Text color="gray.500">Cooling</Text>
-                                <Text color="gray.500">Parking</Text>
+                                <HStack spacing={2}><Text color="gray.500">Furnitured</Text> <CheckIcon /></HStack>
+                                <HStack spacing={2}><Text color="gray.500">Heating</Text> <CheckIcon /></HStack>
+                                <HStack spacing={2}><Text color="gray.500">Cooling</Text> <CheckIcon /></HStack>
+                                <HStack spacing={2}><Text color="gray.500">Internet</Text> <CheckIcon /></HStack>
+                                <HStack spacing={2}><Text color="gray.500">Parking</Text> <CheckIcon /></HStack>
                             </Stack>
                             <Stack direction="column" spacing={2}>
-                                <Text color="gray.500">Price: $500/mo.</Text>
+                                <Text color="gray.500" fontWeight="bold">Price: $500/mo.</Text>
                                 <Link href="mailto:madara@konoha.com" passHref><chakra.a color="gray.500" _hover={{ cursor: "pointer", color: "teal.500" }}>madara@konoha.com</chakra.a></Link>
                                 <Text color="gray.500">+237696740298</Text>
                             </Stack>
@@ -94,7 +106,7 @@ export default function EstatePage() {
                                 <ModalHeader>Rate your visit</ModalHeader>
                                 <ModalCloseButton />
                                 <ModalBody>
-                                    Rating star component....
+                                    <Rating onClick={handleRating} ratingValue={rating} transition={true} />
                                 </ModalBody>
 
                                 <ModalFooter>
