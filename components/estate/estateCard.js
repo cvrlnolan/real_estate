@@ -1,10 +1,9 @@
-import { Box, Flex, Heading, Text, Badge, Stack, Avatar } from "@chakra-ui/react"
+import { Box, Flex, Heading, Text, Badge, Stack } from "@chakra-ui/react"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import { StarIcon } from "@chakra-ui/icons"
 import Image from "next/image"
-import houseImage from "../../public/house.jpg"
 
-const EstateCard = () => {
+const EstateCard = ({ estate }) => {
 
     return (
         <>
@@ -25,10 +24,9 @@ const EstateCard = () => {
                     pos="relative">
                     <Image
                         alt="card_image"
-                        src={houseImage}
+                        src={estate.imgUrl}
                         objectFit="cover"
                         layout="fill"
-                        placeholder="blur"
                     />
                 </Box>
                 <Stack>
@@ -39,18 +37,20 @@ const EstateCard = () => {
                             fontWeight={800}
                             fontSize="sm"
                             letterSpacing={1.1}>
-                            House
+                            {estate.category}
                         </Text>
-                        <Text color="gray.500" fontSize="sm">3 Bedrooms &bull; 3 Baths &bull; 2,123 sqft</Text>
+                        <Text color="gray.500" fontSize="sm">
+                            {estate.bedrooms} Bedrooms &bull; {estate.baths} Baths &bull; {estate.surface_area} sqft
+                        </Text>
                     </Flex>
                     <Heading
                         color={useColorModeValue("gray.700", "white")}
                         fontSize="2xl"
                         fontFamily="body">
-                        Modern home in city center in the heart of historic Los Angeles
+                        {estate.title}
                     </Heading>
                     <Text color="gray.500" fontWeight="bold">
-                        $120,000
+                        ${estate.price}
                     </Text>
                     <Flex>
                         {Array(5)
@@ -63,7 +63,7 @@ const EstateCard = () => {
                             ))
                         }
                     </Flex>
-                    <Text color="gray.500">168 Winged Foot Dr, Aledo, TX 76008</Text>
+                    <Text color="gray.500">{estate.address}, {estate.postal_code} {estate.province}</Text>
                     <Text color="gray.500" textAlign="right" fontSize="sm">10 days ago</Text>
                 </Stack>
             </Box>

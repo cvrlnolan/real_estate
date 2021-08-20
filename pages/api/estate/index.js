@@ -5,8 +5,7 @@ export default async function handler(req, res) {
         await client.connect()
         const estates = client.db("real_estate").collection("estateListings").find({}, { sort: { createdDate: 1 } })
         const estatesData = await estates.toArray()
-        console.log(estatesData)
-        res.status(200).end()
+        res.status(200).json(estatesData)
     } catch (e) {
         console.log(e)
         res.status(400).end()

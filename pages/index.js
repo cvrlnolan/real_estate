@@ -27,16 +27,12 @@ export default function Home() {
     )
   }
 
-
   return (
     <>
       <Navbar>
         <Container maxW="container.xl" centerContent>
           <SimpleGrid minChildWidth="sm" spacing="20px">
-            <EstateCard />
-            <EstateCard />
-            <EstateCard />
-            <EstateCard />
+            {estates.map((estate) => (<EstateCard key={estate._id} estate={estate} />))}
           </SimpleGrid>
         </Container>
       </Navbar>
