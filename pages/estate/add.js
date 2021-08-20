@@ -37,8 +37,8 @@ import { useForm } from "react-hook-form"
 import Compressor from "compressorjs"
 import Navbar from "@/components/layout/navbar"
 import AlertPop from "@/components/formAlert"
-import { countryOptions } from "assets/countries"
-import { categoryOptions } from "assets/categories"
+import { countryOptions } from "@/assets/countries"
+import { categoryOptions } from "@/assets/categories"
 import UploadImage from "@/firebase/estate/uploadImage"
 
 
