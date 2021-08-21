@@ -9,7 +9,7 @@ export default async function UploadImage(imageData, estateData, toast) {
         try {
             await storageRef.child(`${new Date().toISOString()}`).put(image).then((snapshot) => {
                 snapshot.ref.getDownloadURL().then((url) => {
-                    //MongoDB insert to DB...
+                    //Send data for write operation to MongoDB...
                     const newEstateData = {
                         ...estate,
                         imgUrl: url

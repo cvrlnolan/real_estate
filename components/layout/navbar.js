@@ -1,36 +1,37 @@
 import {
-    Container,
     Box,
     Flex,
     HStack,
-    Link,
     IconButton,
     Button,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
     useDisclosure,
     useColorModeValue,
+    chakra,
     Stack,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
+import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons"
+import Link from "next/link"
 import ThemeButton from "@/components/themeButton"
 
-const Links = ["Listings"];
+const Links = [
+    { key: "Listings", text: "Listings", href: "/" },
+    { key: "Reposirtory", text: "Repository", href: "https://github.com/cvrlnolan/real_estate" }
+];
 
-const NavLink = ({ children, linkHoverColor }) => (
-    <Link
-        px={2}
-        py={1}
-        rounded='md'
-        _hover={{
-            textDecoration: 'none',
-            color: linkHoverColor,
-        }}
-        href='#'>
-        {children}
+const NavLink = ({ children, linkHoverColor, linkRef }) => (
+    <Link href={linkRef} passHref>
+        <chakra.a
+            px={2}
+            py={1}
+            rounded="md"
+            _hover={{
+                textDecoration: 'none',
+                color: linkHoverColor,
+                cursor: "pointer"
+            }}
+        >
+            {children}
+        </chakra.a>
     </Link>
 );
 
@@ -57,11 +58,16 @@ export default function Navbar({ children }) {
                             spacing={4}
                             display={{ base: 'none', md: 'flex' }}>
                             {Links.map((link) => (
-                                <NavLink key={link} linkHoverColor={linkHoverColor}>{link}</NavLink>
+                                <NavLink key={link.key} linkRef={link.href} linkHoverColor={linkHoverColor}>{link.text}</NavLink>
                             ))}
                         </HStack>
                     </HStack>
                     <Flex alignItems='center'>
+                        <Link href="/estate/add" passHref>
+                            <Button mr={2} leftIcon={<AddIcon />} variant="outline" size="sm">
+                                Add Estate
+                            </Button>
+                        </Link>
                         <ThemeButton />
                     </Flex>
                 </Flex>

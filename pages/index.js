@@ -1,41 +1,58 @@
-import axios from "axios"
-import useSWR from "swr"
+// import axios from "axios"
+// import useSWR from "swr" Use these two imports if you choose to load the estates via api fetch.
 import Navbar from "@/components/layout/navbar"
 import { Container, SimpleGrid } from "@chakra-ui/react"
+import { client } from "@/mongodb/mongodbClient"
 
 import EstateCard from "@/components/estate/estateCard"
 
-export default function Home() {
+//Loading the estates data via Incremental Static Generation using getStaticProps() at the end of the file.
 
-  const fetcher = url => axios.get(url).then(res => res.data)
+export default function Home({ estatesData }) {
 
-  const { data: estates, error } = useSWR("/api/estate/", fetcher) //Fetch data while keeping the UI reactive.
+  // const fetcher = url => axios.get(url).then(res => res.data)
 
-  if (error) {
-    return (
-      <>
-        <div>Error encountered...</div>
-      </>
-    )
-  }
+  // const { data: estates, error } = useSWR("/api/estate/", fetcher) //Fetch data while keeping the UI reactive.
 
-  if (!estates) {
-    return (
-      <>
-        <div>Loading...</div>
-      </>
-    )
-  }
+  // if (error) {
+  //   return (
+  //     <>
+  //       <div>Error encountered...</div>
+  //     </>
+  //   )
+  // }
+
+  // if (!estates) {
+  //   return (
+  //     <>
+  //       <div>Loading...</div>
+  //     </>
+  //   )
+  // }
 
   return (
     <>
       <Navbar>
         <Container maxW="container.xl" centerContent>
           <SimpleGrid minChildWidth="sm" spacing="20px">
-            {estates.map((estate) => (<EstateCard key={estate._id} estate={estate} />))}
+            {estatesData.map((estate) => (<EstateCard key={estate._id} estate={estate} />))}
           </SimpleGrid>
         </Container>
       </Navbar>
     </>
   )
+}
+
+//Using Incremental Static Generation to get the data on build time.
+
+export async function getStaticProps() {
+  await client.connect()
+  const estates = await client.db(process.env.MONGODB_DATABASE).collection("estateListings").find(
+    {}, { sort: { createdDate: -1 } }).toArray()
+  await client.close()
+  return {
+    props: {
+      estatesData: JSON.parse(JSON.stringify(estates))
+    }
+  }
 }

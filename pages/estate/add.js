@@ -98,7 +98,8 @@ export default function AddEstate() {
         }
         const estateData = {
             ...data,
-            rating: 0,
+            totalRating: 0,
+            reviews: 0,
         }
         await UploadImage(image, estateData, toast)
         // console.log(estateData)
