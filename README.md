@@ -1,34 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RealEstate
 
-## Getting Started
+A NextJS application showcasing a template real estate platform using MongoDB.
+Live version available at: [real-estate-cvrlnolan.vercel.app](https://real-estate-cvrlnolan.vercel.app)
 
-First, run the development server:
+## Description
+
+This project serves as a real world playground for any developer coming across this repository who wants to get hands on a quickstart to NextJS + MongoDB integration. It covers a real world scope of adding estates(properties) to a database, and displaying the listing of those inserted estates to the user. This project can be expanded per user wish as this is just a foundation setup of the approach used to solve this kind of problem.
+
+## Installation
+
+1. To get this project files locally on your machine, you can clone this repository by running the following command on your terminal or command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/cvrlnolan/real_estate
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Next, you need to setup the .env file found in the root with the appropriate API Keys & credentials from the following service providers:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [Google Firebase](https://firebase.google.com/)
+- [MongoDB Atlas](https://cloud.mongodb.com)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Install all the dependency packages found in the `package.json` file by running `yarn install` or `npm install` from the project root directory.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. To start the development server of the application, run `npm run dev` or `yarn dev`. This should log some start-up application information & display the development server url: `http://localhost:3000`. Visit http://localhost:3000 to view your application.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+### General
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This application was built reflecting the MVC architecture and the main dependencies(all found in the `package.json`) of the application are organised as so:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Front-end User Interface(UI): [Chakra UI](https://chakra-ui.com)
+- Backend Integration: [NextJS API](https://nextjs.org/docs/api-routes/introduction) (basically [NodeJS](https://nodejs.org/))
+- Database Management: [MongoDB](https://mongodb.com)
+- File Storage: [Firebase Storage](https://firebase.google.com/products/storage/)
 
-## Deploy on Vercel
+Other important services & dependency libraries of the application include:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [axios](https://www.npmjs.com/package/axios): An http client to fetch urls and make api calls or requests within the application.
+- [swr](https://swr.vercel.app/): To fetch and revalidate data on the client-side of the application while keeping the UI reactive.
+- [compressorjs](https://fengyuanchen.github.io/compressorjs/): Javascript image compressor to compress images before uploading them to storage to have an optimized and servable version.
+- [moment](https://momentjs.com): A javacript library to format and manipulate Date objects.
+- [react-simple-star-rating](https://www.npmjs.com/package/react-simple-star-rating): A react component to easily integrate a star-rating styled component.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Directives
+
+The application is organized from the root(`.`) as follows:
+
+- `./page/` folder(integrated by NextJS) contains the UI Views for the application with the exception of the `./page/api/*` sub-folder.
+- `./page/api` sub-folder(integrated by NextJS) contains serverless and NodeJS backend code for the application.
+- `./firebase/` folder contains the Firebase initialization configurations and the logical operation to upload images to Firebase Storage.
+- `./mongodb/` folder contains the MongoDB Client variable used to establish connections to the MongoDB Atlas server.
+- `./components/` folder contains coded UI layouts to be used through out the application.
+- `./assets/` folder contains pre-defined data selections to be used by the appliction.
+- `./styles/` folder(integrated by NextJS) contains the global style of the application accessible by all components.
+- `./public/` folder(integrated by NextJS) contains global files to be shared through the application. You can store static images here.
+
+Absolute imports to any of these folders through the application are configured in the `jsconfig.json` file in the root.
+
+The application's code source contains inline comments which will provide further help and guidance on how an important piece of module or component works. The code quality was tested with [JSLint](https://www.jslint.com/)
+
+### Deployment
+
+You may eventually want to deploy a live version of your app in a future instance. [Vercel](https://vercel.com/) platform is suitably built fo the deployment of NextJS application and more as they have an integrated environment to deploy directly from your own [Github Repository](https://github.com/new).
+
+## Support
+
+If any worries, bugs or problem arises in the future, you can create an issue, contribute or contact me via:
+
+- [carlnolan@lootyclub.com](mailto:carlnolan@lootyclub.com)
+
+## Roadmap
+
+I plan on doing some alternate changes in the future to add some new features as this project is hyper flexible & can be used as a practise ground for other web technologies or services.
+
+## License
+
+![GitHub](https://img.shields.io/github/license/cvrlnolan/real_estate)
+
+###
+
+![GitHub last commit](https://img.shields.io/github/last-commit/cvrlnolan/real_estate) ![GitHub contributors](https://img.shields.io/github/contributors/cvrlnolan/real_estate) ![GitHub issues](https://img.shields.io/github/issues/cvrlnolan/real_estate) ![GitHub repo size](https://img.shields.io/github/repo-size/cvrlnolan/real_estate)
+
+![GitHub followers](https://img.shields.io/github/followers/cvrlnolan?style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/realcarlnolan?style=social)
