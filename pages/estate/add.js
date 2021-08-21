@@ -1,3 +1,4 @@
+import Head from "next/head"
 import {
     Container,
     Heading,
@@ -107,6 +108,9 @@ export default function AddEstate() {
 
     return (
         <>
+            <Head>
+                <title>RealEstate | Add Estate</title>
+            </Head>
             <Navbar>
                 <Container maxW='container.xl' w="full" centerContent>
                     <Box maxW="xl" p={10} w="full" rounded="lg" boxShadow="lg">

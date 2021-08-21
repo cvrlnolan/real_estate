@@ -1,5 +1,6 @@
 // import axios from "axios"
 // import useSWR from "swr" Use these two imports if you choose to load the estates via api fetch.
+import Head from "next/head"
 import Navbar from "@/components/layout/navbar"
 import { Container, SimpleGrid } from "@chakra-ui/react"
 import { client } from "@/mongodb/mongodbClient"
@@ -32,6 +33,9 @@ export default function Home({ estatesData }) {
 
   return (
     <>
+      <Head>
+        <title>RealEstate | Listings</title>
+      </Head>
       <Navbar>
         <Container maxW="container.xl" centerContent>
           <SimpleGrid minChildWidth="sm" spacing="20px">

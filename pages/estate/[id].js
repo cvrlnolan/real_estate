@@ -1,3 +1,4 @@
+import Head from "next/head"
 import {
     Flex,
     Heading,
@@ -80,6 +81,9 @@ export default function EstatePage() {
     if (!estate) {
         return (
             <>
+                <Head>
+                    <title>RealEstate | Estate Page</title>
+                </Head>
                 <Navbar>
                     <Skeleton height="container.xl">
                         <Box maxW="container.xl" w="full" p={8} rounded="lg" boxShadow="lg"></Box>
@@ -112,6 +116,9 @@ export default function EstatePage() {
 
     return (
         <>
+            <Head>
+                <title>RealEstate | {estate.title}</title>
+            </Head>
             <Navbar>
                 <Box maxW="container.xl" w="full" p={8} rounded="lg" boxShadow="lg">
                     <Stack alignItems="center" spacing={5}>
