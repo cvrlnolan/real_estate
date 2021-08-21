@@ -15,7 +15,7 @@ This project serves as a real world playground for any developer coming across t
 git clone https://github.com/cvrlnolan/real_estate
 ```
 
-2. Next, you need to setup the .env file found in the root with the appropriate API Keys & credentials from the following service providers:
+2. Next, you need to setup the `.env` file found in the root with the appropriate API Keys & credentials from the following service providers:
 
 - [Google Firebase](https://firebase.google.com/)
 - [MongoDB Atlas](https://cloud.mongodb.com)
