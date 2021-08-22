@@ -57,6 +57,7 @@ export async function getStaticProps() {
   return {
     props: {
       estatesData: JSON.parse(JSON.stringify(estates))
-    }
+    },
+    revalidate: 10,
   }
 }
