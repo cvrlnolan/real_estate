@@ -186,7 +186,7 @@ export default function EstatePage() {
                                 <Text color="gray.500" fontWeight="bold">
                                     Price: ${estate.price} {estate.status === "rent" && "/mo."}
                                 </Text>
-                                <Link href="mailto:madara@konoha.com" passHref>
+                                <Link href={`mailto:${estate.email}`} passHref>
                                     <chakra.a
                                         color="gray.500"
                                         _hover={{
