@@ -39,6 +39,7 @@ Other important services & dependency libraries of the application include:
 
 - [axios](https://www.npmjs.com/package/axios): An http client to fetch urls and make api calls or requests within the application.
 - [swr](https://swr.vercel.app/): To fetch and revalidate data on the client-side of the application while keeping the UI reactive.
+- [react-hook-form](https://react-hook-form.com/): A lightweight Javascript library for form validation and form data capturing.
 - [compressorjs](https://fengyuanchen.github.io/compressorjs/): Javascript image compressor to compress images before uploading them to storage to have an optimized and servable version.
 - [moment](https://momentjs.com): A javacript library to format and manipulate Date objects.
 - [react-simple-star-rating](https://www.npmjs.com/package/react-simple-star-rating): A react component to easily integrate a star-rating styled component.
