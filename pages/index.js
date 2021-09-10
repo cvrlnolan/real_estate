@@ -1,5 +1,6 @@
 // import axios from "axios"
 // import useSWR from "swr" Use these two imports if you choose to load the estates via api fetch.
+import React from "react"
 import Head from "next/head"
 import Navbar from "@/components/layout/navbar"
 import { Container, SimpleGrid } from "@chakra-ui/react"

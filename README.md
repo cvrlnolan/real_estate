@@ -43,6 +43,8 @@ Other important services & dependency libraries of the application include:
 - [compressorjs](https://fengyuanchen.github.io/compressorjs/): Javascript image compressor to compress images before uploading them to storage to have an optimized and servable version.
 - [moment](https://momentjs.com): A javacript library to format and manipulate Date objects.
 - [react-simple-star-rating](https://www.npmjs.com/package/react-simple-star-rating): A react component to easily integrate a star-rating styled component.
+- [testing-library](https://testing-library.com/): This library provides simple and complete testing utilities to be implement in our test scripts.
+- [jest](https://jestjs.io/): A JavaSript Testing Framework to run test scripts in the virtual environment of our application.
 
 ### Directives
 
@@ -64,6 +66,18 @@ The application's code source contains inline comments which will provide furthe
 ### Deployment
 
 You may eventually want to deploy a live version of your app in a future instance. [Vercel](https://vercel.com/) platform is suitably built fo the deployment of NextJS application and more as they have an integrated environment to deploy directly from your own [Github Repository](https://github.com/new).
+
+### Tests
+
+The `tests` folder contains some major component Unit Test scripts which have been passed successfully to ensure the application functions and renders as it is intended to. Only the major components have been tested. You can decide to add more tests on your personal end.
+
+To run a test, type npm run test or yarn test including the test script you want to run ex:
+
+```bash
+yarn test index
+```
+
+The `jest.config.js` file contains the configuration options for our [Jest](https://jestjs.io/) Test Runner.
 
 ## Support
 
