@@ -74,7 +74,7 @@ export default function EstatePage() {
     if (error) {
         return (
             <>
-                <div>Error encountered...</div>
+                <div>{error.message}</div>
             </>
         )
     }
@@ -152,7 +152,7 @@ export default function EstatePage() {
                                 blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(400, 400))}`}
                             />
                         </Box>
-                        <Text color="gray.500">
+                        <Text color="gray.500" w="full">
                             {estate.property_briefing}
                         </Text>
                         <SimpleGrid w="full" columns={[1, 2, 3]} spacing={10}>
@@ -202,7 +202,7 @@ export default function EstatePage() {
                             </Stack>
                         </SimpleGrid>
                         {estate.additional_info !== "" &&
-                            <Text color="gray.500">
+                            <Text color="gray.500" w="full">
                                 {estate.additional_info}
                             </Text>
                         }

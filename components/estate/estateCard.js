@@ -66,6 +66,7 @@ const EstateCard = ({ estate }) => {
                 >
                     <Box
                         maxW="445px"
+                        h="450px"
                         w="full"
                         bg={useColorModeValue("white", "gray.900")}
                         boxShadow="2xl"
@@ -97,13 +98,14 @@ const EstateCard = ({ estate }) => {
                                     letterSpacing={1.1}>
                                     {estate.category}
                                 </Text>
-                                <Text color="gray.500" fontSize="sm">
+                                <Text color="gray.500" fontSize="sm" noOfLines="1" ml={2}>
                                     {estate.bedrooms} Bedrooms &bull; {estate.baths} Baths &bull; {estate.surface_area} sqft
                                 </Text>
                             </Flex>
                             <Heading
                                 color={useColorModeValue("gray.700", "white")}
                                 fontSize="2xl"
+                                noOfLines={1}
                                 fontFamily="body">
                                 {estate.title}
                             </Heading>
@@ -121,7 +123,7 @@ const EstateCard = ({ estate }) => {
                                     ))
                                 }
                             </Flex>
-                            <Text color="gray.500">{estate.address}, {estate.postal_code} {estate.province}</Text>
+                            <Text noOfLines={1} color="gray.500">{estate.address}, {estate.postal_code} {estate.province}</Text>
                             <Text color="gray.500" textAlign="right" fontSize="sm">{getPostedTime(estate.createdDate)} day(s) ago</Text>
                         </Stack>
                     </Box>

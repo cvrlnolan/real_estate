@@ -4,6 +4,7 @@ import {
     Flex,
     HStack,
     IconButton,
+    Text,
     Button,
     useDisclosure,
     useColorModeValue,
@@ -38,8 +39,8 @@ const NavLink = ({ children, linkHoverColor, linkRef }) => (
 
 export default function Navbar({ children }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
-    const linkHoverColor = useColorModeValue('teal.700', 'teal.400');
+    const linkColor = useColorModeValue("blue.600", "blue.100");
+    const linkHoverColor = useColorModeValue("teal.700", "teal.400");
 
     return (
         <>
@@ -84,8 +85,27 @@ export default function Navbar({ children }) {
                 ) : null}
             </Box>
 
-            <Box p={4}>
+            <Box p={4} justifyContent="space-between">
                 {children}
+                <Flex w="full" h="20px" p={8}>
+                    <Text w="full" textAlign="center" fontWeight="bold">
+                        Developed by
+                        <Link href="https://carlnolan.lootyclub.com" passHref>
+                            <Text
+                                display="inline-flex"
+                                ml={1} color={linkColor}
+                                cursor="pointer"
+                                _hover={{
+                                    color: useColorModeValue("blue.200", "blue.400"),
+                                }}
+                                transition="all"
+                                transitionDuration="0.5s"
+                            >
+                                Carl Nolan
+                            </Text>
+                        </Link>
+                    </Text>
+                </Flex>
             </Box>
         </>
     );
