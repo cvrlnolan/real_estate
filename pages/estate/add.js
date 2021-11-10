@@ -41,7 +41,7 @@ import Navbar from "@/components/layout/navbar"
 import AlertPop from "@/components/formAlert"
 import { countryOptions } from "@/assets/countries"
 import { categoryOptions } from "@/assets/categories"
-import UploadImage from "@/firebase/estate/uploadImage"
+import UploadImage from "@/lib/firebase/estate/uploadImage"
 
 
 export default function AddEstate() {

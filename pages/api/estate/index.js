@@ -1,4 +1,4 @@
-import { client } from "@/mongodb/mongodbClient"
+import { client } from "@/lib/mongodb/mongodbClient"
 
 export default async function handler(req, res) {
     try {

@@ -85,6 +85,7 @@ Array [
         <button
           aria-label="theme_button"
           className="chakra-button css-10a8y2i"
+          data-testid="theme_button"
           type="button"
         >
           <svg
@@ -136,13 +137,13 @@ Array [
     </div>
   </div>,
   <div
-    className="css-2rlxtj"
+    className="css-1ilk43r"
   >
     <div
       className="chakra-container css-4cl8wm"
     >
       <div
-        className="css-1fuoiyw"
+        className="css-95cf8c"
       >
         <a
           className="css-p6s8gx"
@@ -151,7 +152,7 @@ Array [
           onMouseEnter={[Function]}
         >
           <div
-            className="css-16hc176"
+            className="css-z3nv2h"
           >
             <div
               className="css-1yzea99"
@@ -246,7 +247,7 @@ Array [
                   Apartment
                 </p>
                 <p
-                  className="chakra-text css-11ox3m3"
+                  className="chakra-text css-yz4njg"
                 >
                   2
                    Bedrooms • 
@@ -257,7 +258,7 @@ Array [
                 </p>
               </div>
               <h2
-                className="chakra-heading css-1r8d57x"
+                className="chakra-heading css-f9m5xd"
               >
                 Modern Apartment Downtown Los Angeles
               </h2>
@@ -323,7 +324,7 @@ Array [
                 </svg>
               </div>
               <p
-                className="chakra-text css-ax9bdp"
+                className="chakra-text css-uquae6"
               >
                 2465 Evergreen Lane
                 , 
@@ -334,7 +335,7 @@ Array [
               <p
                 className="chakra-text css-nu9dau"
               >
-                21
+                82
                  day(s) ago
               </p>
             </div>
@@ -347,7 +348,7 @@ Array [
           onMouseEnter={[Function]}
         >
           <div
-            className="css-16hc176"
+            className="css-z3nv2h"
           >
             <div
               className="css-1yzea99"
@@ -442,7 +443,7 @@ Array [
                   Apartment
                 </p>
                 <p
-                  className="chakra-text css-11ox3m3"
+                  className="chakra-text css-yz4njg"
                 >
                   2
                    Bedrooms • 
@@ -453,7 +454,7 @@ Array [
                 </p>
               </div>
               <h2
-                className="chakra-heading css-1r8d57x"
+                className="chakra-heading css-f9m5xd"
               >
                 Modern Apartment Downtown Los Angeles
               </h2>
@@ -519,7 +520,7 @@ Array [
                 </svg>
               </div>
               <p
-                className="chakra-text css-ax9bdp"
+                className="chakra-text css-uquae6"
               >
                 2465 Evergreen Lane
                 , 
@@ -530,13 +531,30 @@ Array [
               <p
                 className="chakra-text css-nu9dau"
               >
-                21
+                82
                  day(s) ago
               </p>
             </div>
           </div>
         </a>
       </div>
+    </div>
+    <div
+      className="css-1ms4blg"
+    >
+      <p
+        className="chakra-text css-48diyc"
+      >
+        Developed by
+        <p
+          className="chakra-text css-q908ka"
+          href="https://carlnolan.lootyclub.com"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Carl Nolan
+        </p>
+      </p>
     </div>
   </div>,
 ]

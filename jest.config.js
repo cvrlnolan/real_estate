@@ -7,8 +7,7 @@ module.exports = {
     moduleNameMapper: {
         "^@/components/(.*)$": "<rootDir>/components/$1",
         "^@/assets/(.*)$": "<rootDir>/assets/$1",
-        "^@/firebase/(.*)$": "<rootDir>/firebase/$1",
-        "^@/mongodb/(.*)$": "<rootDir>/mongodb/$1"
+        "^@/lib/(.*)$": "<rootDir>/lib/$1",
     },
     testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
     transform: {

@@ -4,8 +4,7 @@
     "paths": {
       "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
-      "@/firebase/*": ["firebase/*"],
-      "@/mongodb/*": ["mongodb/*"],
+      "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"]
     }
   }

@@ -4,8 +4,7 @@ import React from "react"
 import Head from "next/head"
 import Navbar from "@/components/layout/navbar"
 import { Container, SimpleGrid } from "@chakra-ui/react"
-import { client } from "@/mongodb/mongodbClient"
-
+import { client } from "@/lib/mongodb/mongodbClient"
 import EstateCard from "@/components/estate/estateCard"
 
 //Loading the estates data via Incremental Static Generation using getStaticProps() at the end of the file.
