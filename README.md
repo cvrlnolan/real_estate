@@ -30,8 +30,8 @@ git clone https://github.com/cvrlnolan/real_estate
 
 This application was built reflecting the MVC architecture and the main dependencies(all found in the `package.json`) of the application are organised as so:
 
-- Front-end User Interface(UI): [Chakra UI](https://chakra-ui.com)
-- Backend Integration: [NextJS API](https://nextjs.org/docs/api-routes/introduction) (basically [NodeJS](https://nodejs.org/))
+- Front-end User Interface(UI): [React.js](https://reactjs.org), [Chakra UI](https://chakra-ui.com)
+- Backend Integration: [NextJS API(serverless functions)](https://nextjs.org/docs/api-routes/introduction) (basically [NodeJS](https://nodejs.org/))
 - Database Management: [MongoDB](https://mongodb.com)
 - File Storage: [Firebase Storage](https://firebase.google.com/products/storage/)
 
@@ -95,6 +95,6 @@ I plan on doing some alternate changes in the future to add some new features as
 
 ###
 
-![GitHub last commit](https://img.shields.io/github/last-commit/cvrlnolan/real_estate) ![GitHub contributors](https://img.shields.io/github/contributors/cvrlnolan/real_estate) ![GitHub issues](https://img.shields.io/github/issues/cvrlnolan/real_estate) ![GitHub repo size](https://img.shields.io/github/repo-size/cvrlnolan/real_estate)
+![Codecov](https://img.shields.io/codecov/c/github/cvrlnolan/real_estate) ![GitHub last commit](https://img.shields.io/github/last-commit/cvrlnolan/real_estate) ![GitHub contributors](https://img.shields.io/github/contributors/cvrlnolan/real_estate) ![GitHub issues](https://img.shields.io/github/issues/cvrlnolan/real_estate) ![GitHub repo size](https://img.shields.io/github/repo-size/cvrlnolan/real_estate)
 
 ![GitHub followers](https://img.shields.io/github/followers/cvrlnolan?style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/realcarlnolan?style=social)
